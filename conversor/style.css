@@ -1,0 +1,41 @@
+body {
+    background-color: aliceblue;
+}
+
+h1{
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    height: 250px;
+    width: 500px;
+    padding: 15px;
+    margin: auto;
+    border: 1px solid cornflowerblue;
+    border-radius: 40px;
+}
+
+.box{
+    padding: 25px;
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
+}
+
+.grados {
+    width: 300px;
+    height: 30px;
+    border: 2px solid rgb(85, 135, 226);
+    border-radius: 30px;
+    margin: 10px;
+    font-size: 18px;
+}
+
+.grados::placeholder{
+    font-size: 15px;
+    font-style: italic;
+    padding-left: 15px;
+    opacity: 0.5;
+}

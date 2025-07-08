@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora</title>
+</head>
+<body>
+    <div id="contenedorCalculadora">
+        <div id="lector">
+            <button id="ce" onclick="borrarNumero()">CE</button>
+            <p id="resultado"></p>
+        </div>
+        <div id="numeros" class="botones">
+            <div id="fila1">
+                <button class="btn nro" id="siete">7</button>
+                <button class="btn nro" id="ocho">8</button>
+                <button class="btn nro" id="nueve">9</button>
+                <button class="btn signos" id="dividir">/</button>
+            </div>
+
+            <div id="fila2">
+                <button class="btn nro" id="cuatro">4</button>
+                <button class="btn nro" id="cinco">5</button>
+                <button class="btn nro" id="seis">6</button>
+                <button class="btn signos" id="multiplicar">*</button>
+                
+            </div>
+            <div id="fila3">
+                <button class="btn nro" id="uno">1</button>
+                <button class="btn nro" id="dos">2</button>
+                <button class="btn nro" id="tres">3</button>
+                <button class="btn signos" id="restar">-</button>
+            </div>
+
+            <button class="btn nro" id="cero">0</button>
+            <button class="btn nro" id="punto">.</button>
+            <button class="btn" id="igual">=</button>
+            <button class="btn signos" id="sumar">+</button>
+        </div> 
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
