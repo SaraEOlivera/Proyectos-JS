@@ -18,7 +18,7 @@ h1{
 }
 
 .box{
-    padding: 25px;
+    padding: 10px;
     margin: auto;
     text-align: center;
     font-size: 20px;
@@ -38,4 +38,9 @@ h1{
     font-style: italic;
     padding-left: 15px;
     opacity: 0.5;
+}
+
+.resultado {
+    font-weight: bold;
+    font-size: 22px;
 }

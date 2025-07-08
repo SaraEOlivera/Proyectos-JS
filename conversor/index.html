@@ -10,22 +10,18 @@
     <h1>Conversor de temperatura</h1>
     <div class="container">
         <div class="box box1">
-            <label for="Celsius">Celsius</label>
-            <input type="radio" name="Celsius">
+            <label for="radioC">Celsius</label>
+            <input type="radio" id="radioC" name="medida" value="Celsius">
 
-            <label for="Fahrenheit">Fahrenheit</label>
-            <input type="radio" name="Fahrenheit">
+            <label for="radioF">Fahrenheit</label>
+            <input type="radio" id="radioF" name="medida" value="Fahrenheit">
 
-            <input type="text" class="grados" placeholder="Ingrese grados">
+            <input type="number" class="grados" placeholder="Ingrese grados">
         </div>
         <div class="box box2">
-            <label for="Celsius">Celsius</label>
-            <input type="radio" name="Celsius">
-
-            <label for="Fahrenheit">Fahrenheit</label>
-            <input type="radio" name="Fahrenheit">
-            
-            <input type="text" class="grados" placeholder="Ingrese grados">
+            <p class="resultado resultadoCelsius">Resultado en grados Celsius</p>
+            <p class="resultado resultadoFahrenheit">Resultado en grados Fahrenheit</p>
+            <input type="text" class="grados" placeholder="Resultado">
         </div>
 
     </div>
