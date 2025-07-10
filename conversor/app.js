@@ -17,3 +17,8 @@ function detectarRadioBtn() {
         console.log("No Elegiste");
     }
 }
+
+const primerNumero = document.getElementById("inputUsuario");
+primerNumero.oninput = () => {
+    console.log("Ingresaste " + primerNumero.value);
+}
