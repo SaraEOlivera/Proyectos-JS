@@ -1,24 +1,37 @@
-
-
-document.querySelectorAll('input[name = "medida"]').forEach(opcion => {
-    opcion.addEventListener('change', detectarRadioBtn);
-});
-
-
-function detectarRadioBtn() {
-    let seleccionado = document.querySelector('input[name="medida"]:checked').value;
-    
-    if(seleccionado === "Celsius"){
-        console.log("Elegiste " + seleccionado);
-    }else if (seleccionado === "Fahrenheit"){
-        console.log("Elegiste " + seleccionado);
-    }
-    else {
-        console.log("No Elegiste");
-    }
-}
-
 const primerNumero = document.getElementById("inputUsuario");
+const segundoNumero = document.getElementById("equivalente");
+
 primerNumero.oninput = () => {
-    console.log("Ingresaste " + primerNumero.value);
+    let seleccionado = document.querySelector('input[name="medida"]:checked').value;
+    let valor1 = parseFloat(primerNumero.value);
+
+    if(isNaN(valor1)){
+        segundoNumero.value = '';
+        return
+    }
+
+    let resultado;
+
+    if (seleccionado === "Celsius") {
+        resultado = (valor1 * 9 / 5) + 32;
+        console.log("resultado " + resultado + " celsius")
+    }
+    else if (seleccionado === "Fahrenheit") {
+        resultado = (valor1 - 32) * 5 / 9;
+        console.log("resultado " + resultado + " Fahrenheit")
+    }
+    segundoNumero.value = resultado.toFixed(2);
+
 }
+
+
+        
+        
+        
+
+
+
+
+
+
+
