@@ -1,0 +1,51 @@
+body {
+    background-color: rgb(238, 234, 227);
+}
+
+h1{ 
+    text-align: center;
+}
+
+.contenedor{
+    width: 500px;
+    height: 150px;
+    border: 2px solid rgb(212, 122, 5);
+    border-radius: 20px;
+    margin: auto;
+    margin-top: 7px;
+    padding: 10px;
+}
+
+.box {
+    text-align: center;
+}
+
+.box1{
+    margin-top: 5px;
+    margin: auto;
+    padding: 10px;
+}
+
+.box1 label, .textos {
+    font-size: 20px;
+    padding-left: 17px;
+    margin-left: 10px;
+}
+
+.box2{
+    display: flex;
+    justify-content:center;
+    margin: 15px;
+}
+
+.equivalente {
+    margin: 15px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.inputUsuario {
+    margin-top: 10px;
+    padding: 5px;
+    width: 350px;
+}

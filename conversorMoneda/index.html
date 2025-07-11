@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Conversor de monedas</title>
+</head>
+<body>
+    <h1>Conversor de moneda</h1>
+    <div class="contenedor">
+        <div class="box box1">
+            <div class="radios">
+                <label for="peso">Peso argentino</label>
+                <input type="radio" name="moneda" id="peso" value="Peso">
+                <label for="dolar">Dolar americano</label>
+                <input type="radio" name="moneda" id="dolar" value="Dolar">
+            </div>
+            <input type="number" name="numero" class="inputUsuario" id="inputUsuario">
+        </div>
+
+        <div class="box box2">
+            <p class="textos" id="pDolar">USD </p>
+            <p class="textos" id="pArgento">ARS </p>
+            <p class="equivalente" id="equivalente">0</p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
