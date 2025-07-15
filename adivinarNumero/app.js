@@ -5,23 +5,32 @@ let aleatorio = Math.random();
 aleatorio = aleatorio * 100 + 1; 
 aleatorio = Math.trunc(aleatorio);
 console.log(aleatorio);
-
+let intentos = 3;
 respuesta.style.display = "none";
 
+
 function confirmarNumero() {
+
     let valorUsuario = parseInt(numUsuario.value);
-    if (valorUsuario > aleatorio){    
-        respuesta.innerText = `${valorUsuario} es muy alto`;
-        respuesta.style.display = "block";
+
+    if (valorUsuario > aleatorio) {
+        intentos--;
+        respuesta.innerText = `${valorUsuario} es muy alto. Te quedan ${intentos} intentos.`;
     }
-    else if (valorUsuario < aleatorio){
-        respuesta.innerText = `${valorUsuario} es muy bajo`;
-        respuesta.style.display = "block";
+    else if (valorUsuario < aleatorio) {
+        intentos--;
+        respuesta.innerText = `${valorUsuario} es muy bajo. Te quedan ${intentos} intentos.`;
     }
-    else if (valorUsuario === aleatorio){
+    else if (valorUsuario === aleatorio) {
         respuesta.innerText = `Adivinaste! El número era ${aleatorio}`;
-        respuesta.style.display = "block";
+        btnVerificar.disabled = true;
+        return;
     }
+    if (intentos === 0){
+        respuesta.innerText = `Perdiste! No hay mas intentos. El número era ${aleatorio}`;
+        btnVerificar.disabled = true;
+    }
+    respuesta.style.display = "block";
 }
 let btnVerificar = document.getElementById("verificarNumero");
 btnVerificar.addEventListener("click", confirmarNumero);

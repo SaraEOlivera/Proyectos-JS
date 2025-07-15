@@ -14,12 +14,12 @@ h1 {
     border: 2px solid rgb(113, 143, 143);
     border-radius: 40px;
     margin: auto;
-    padding: 6px;
+    padding: 2px;
 }
 
 .input {
     width: 350px;
-    padding: 5px;
+    padding: 3px;
     margin: auto;
     font-style: italic;
     font-size: 15px;
