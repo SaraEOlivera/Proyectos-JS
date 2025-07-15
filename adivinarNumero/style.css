@@ -35,3 +35,10 @@ h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     border-radius: 30px;
 }
+
+.respuesta {
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+
+}
