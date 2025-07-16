@@ -8,7 +8,6 @@ console.log(aleatorio);
 let intentos = 3;
 respuesta.style.display = "none";
 
-
 function confirmarNumero() {
 
     let valorUsuario = parseInt(numUsuario.value);
