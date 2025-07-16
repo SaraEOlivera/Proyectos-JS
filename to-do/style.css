@@ -1,0 +1,22 @@
+* {
+    background-color: #f7f4f4;
+}
+
+h1{
+    text-align: center;
+}
+
+.contenedor{
+    display: flex;
+    align-items: center;
+}
+
+.nuevaTarea{
+    width: 450px;
+    margin: 0 auto;
+    height: 30px;
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 10px;
+}
+
