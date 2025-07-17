@@ -1,5 +1,5 @@
 * {
-    background-color: #f7f4f4;
+    background-color: #f4f4f4;
 }
 
 h1{
@@ -8,6 +8,7 @@ h1{
 
 .contenedor{
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -18,5 +19,31 @@ h1{
     font-size: 18px;
     font-style: italic;
     margin-top: 10px;
+    border: 1px solid #4f4fc0;
+    border-radius: 5px;
 }
 
+.nuevaTarea:focus{
+    outline: none;
+    border: 2px solid #4f4fc0;
+}
+
+.listaTareas{
+    padding-top: 20px;
+}
+
+.elementoLista {
+    list-style-type:square;
+    font-size: 22px;
+    font-weight:500;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 5px;
+}
+
+.elementoLinea {
+    width: 400px;
+    height: 1px;
+    border: none;
+    background-color: #4f4fc0;
+
+}
