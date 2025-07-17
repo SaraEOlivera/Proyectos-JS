@@ -28,22 +28,43 @@ h1{
     border: 2px solid #4f4fc0;
 }
 
+/* ul */
 .listaTareas{
     padding-top: 20px;
+    padding-left: 0;
 }
 
+/* li */
 .elementoLista {
-    list-style-type:square;
+    list-style-type:none;
     font-size: 22px;
     font-weight:500;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    padding: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;  
 }
 
+/* div contenedor li */
+.divTarea{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 5px 0;
+}
+
+/* span-circulo */
+.circulo {
+    display: inline-block; 
+    width: 20px;
+    height: 20px;
+    border: 2px solid #4f4fc0;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* hr */
 .elementoLinea {
     width: 400px;
     height: 1px;
     border: none;
     background-color: #4f4fc0;
-
+    margin: 10px 4px;
 }

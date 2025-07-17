@@ -2,17 +2,44 @@
 let lista = document.getElementById('lista');
 let nuevaTarea = document.getElementById('nuevaTarea');
 nuevaTarea.addEventListener('keyup', (e) => {
-    if (e.key === 'Enter') {
-        let nuevoLi = document.createElement('li');
-        let nuevaLinea = document.createElement('hr');
 
+    if (e.key === 'Enter') {
+        if(nuevaTarea.value === ''){
+            return;
+        }
+        
+        let nuevoLi = document.createElement('li');
         nuevoLi.classList.add('elementoLista');
+
+        let nuevaLinea = document.createElement('hr');
         nuevaLinea.classList.add('elementoLinea');
 
-        nuevoLi.innerText = nuevaTarea.value;
+        let divTarea = document.createElement('div');
+        divTarea.classList.add('divTarea');
+
+        let spanCirculo = document.createElement('span');
+        spanCirculo.classList.add('circulo');
+        
+
+        let spanTexto = document.createElement('span');
+        spanTexto.classList.add('txtTarea');
+        spanTexto.textContent = nuevaTarea.value;
+
+        
+        divTarea.appendChild(spanCirculo);
+        divTarea.appendChild(spanTexto);
+
+        nuevoLi.appendChild(divTarea);
+        nuevoLi.appendChild(nuevaLinea);
 
         document.querySelector('.listaTareas').appendChild(nuevoLi);
-        document.querySelector('.listaTareas').appendChild(nuevaLinea);
+
         nuevaTarea.value = '';   
-    }
-})
+    };
+});
+
+
+
+
+
+ 
