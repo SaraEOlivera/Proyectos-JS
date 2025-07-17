@@ -38,7 +38,20 @@ nuevaTarea.addEventListener('keyup', (e) => {
     };
 });
 
+// elemento padre ul .listaTareas
+let listaTareas = document.querySelector('.listaTareas');
 
+listaTareas.addEventListener('click', (event) => {
+    if(event.target.classList.contains('circulo')){
+        event.target.style.backgroundColor = '#00ff00';
+        event.target.style.border = '2px solid #00ff00';
+
+        let txtTarea = event.target.nextElementSibling;
+        if(txtTarea && txtTarea.classList.contains('txtTarea')){
+            txtTarea.style.textDecoration = 'line-through';
+        }
+    }
+})
 
 
 
