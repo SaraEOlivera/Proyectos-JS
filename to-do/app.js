@@ -43,12 +43,12 @@ let listaTareas = document.querySelector('.listaTareas');
 
 listaTareas.addEventListener('click', (event) => {
     if(event.target.classList.contains('circulo')){
-        event.target.style.backgroundColor = '#00ff00';
-        event.target.style.border = '2px solid #00ff00';
+        event.target.classList.toggle('completo');
+
 
         let txtTarea = event.target.nextElementSibling;
         if(txtTarea && txtTarea.classList.contains('txtTarea')){
-            txtTarea.style.textDecoration = 'line-through';
+            txtTarea.classList.toggle('completo');
         }
     }
 })

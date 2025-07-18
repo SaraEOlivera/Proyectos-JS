@@ -60,6 +60,19 @@ h1{
     cursor: pointer;
 }
 
+.circulo.completo {
+    background-color: #00ff00;
+    border: 2px solid #00ff00;
+}
+
+.txtTarea{
+    font-size: 22px;
+}
+
+.txtTarea.completo{
+    text-decoration: line-through;
+}
+
 /* hr */
 .elementoLinea {
     width: 400px;
