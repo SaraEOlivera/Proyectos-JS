@@ -45,9 +45,19 @@ h1{
 /* div contenedor li */
 .divTarea{
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.divTarea:hover .iconos {
+    opacity: 1;
+}
+
+.divtexto{
+    display: flex;
+    align-items: center;
     gap: 10px;
-    padding: 5px 0;
 }
 
 /* span-circulo */
@@ -72,6 +82,22 @@ h1{
 .txtTarea.completo{
     text-decoration: line-through;
 }
+
+.iconos {
+    /* display: inline-flex; */
+    display: flex;
+    gap: 10px;
+    font-size: 15px;
+    color: #4f4fc0;
+    cursor: pointer;
+    opacity: 0;
+    transition-duration: 1500ms;
+}
+
+/* .iconos:hover{
+    opacity: 1;
+}
+  */
 
 /* hr */
 .elementoLinea {
