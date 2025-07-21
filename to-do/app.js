@@ -61,16 +61,43 @@ nuevaTarea.addEventListener('keyup', (e) => {
 let listaTareas = document.querySelector('.listaTareas');
 
 listaTareas.addEventListener('click', (event) => {
+    //tachar + verde al click en circulo
     if(event.target.classList.contains('circulo')){
         event.target.classList.toggle('completo');
-
 
         let txtTarea = event.target.nextElementSibling;
         if(txtTarea && txtTarea.classList.contains('txtTarea')){
             txtTarea.classList.toggle('completo');
         }
     }
-})
+
+    //tachar + verde al click en tarea
+    if(event.target.classList.contains('txtTarea')){
+        event.target.classList.toggle('completo');
+
+        let circulo = event.target.previousElementSibling;
+        if(circulo && circulo.classList.contains('circulo')){
+            circulo.classList.toggle('completo');
+        }
+    }
+
+    if(event.target.classList.contains('fa-trash-can')){
+        let li = event.target.closest('li');
+        if (li) {
+            li.remove();    
+        }
+    }
+
+    //hacer otro evento para el icono editar
+    // if(event.target.classList.contains('fa-pencil')){
+    //     let li = event.target.closest('li');
+    //     if (li) {
+    //         li.remove();    
+    //     }
+    // }
+
+    
+});
 
 
 
