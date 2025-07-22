@@ -61,6 +61,7 @@ nuevaTarea.addEventListener('keyup', (e) => {
 let listaTareas = document.querySelector('.listaTareas');
 
 listaTareas.addEventListener('click', (event) => {
+
     //tachar + verde al click en circulo
     if(event.target.classList.contains('circulo')){
         event.target.classList.toggle('completo');
@@ -81,6 +82,7 @@ listaTareas.addEventListener('click', (event) => {
         }
     }
 
+    //eliminar
     if(event.target.classList.contains('fa-trash-can')){
         let li = event.target.closest('li');
         if (li) {
@@ -88,15 +90,28 @@ listaTareas.addEventListener('click', (event) => {
         }
     }
 
-    //hacer otro evento para el icono editar
-    // if(event.target.classList.contains('fa-pencil')){
-    //     let li = event.target.closest('li');
-    //     if (li) {
-    //         li.remove();    
-    //     }
-    // }
+    //editar
+    if(event.target.classList.contains('fa-pencil')){
+       let divTarea = event.target.closest('.divTarea');
+        let span = divTarea.querySelector('.txtTarea');
 
-    
+        if(span){
+            let nuevoInput = document.createElement('input');
+            nuevoInput.type = 'text';
+            nuevoInput.value = span.textContent;
+            nuevoInput.classList.add('txtTarea');
+            span.replaceWith(nuevoInput);
+
+            nuevoInput.addEventListener('keyup', (e) => {
+                if (e.key === 'Enter'){
+                    let spanTexto = document.createElement('span');
+                    spanTexto.classList.add('txtTarea');
+                    spanTexto.textContent =  nuevoInput.value;
+                    nuevoInput.replaceWith(spanTexto);
+                }
+            });
+        }
+    }
 });
 
 
