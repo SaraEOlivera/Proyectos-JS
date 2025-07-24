@@ -1,12 +1,19 @@
 
 let lista = document.getElementById('lista');
 let nuevaTarea = document.getElementById('nuevaTarea');
+let tareas = [];
+
 nuevaTarea.addEventListener('keyup', (e) => {
 
     if (e.key === 'Enter') {
         if(nuevaTarea.value === ''){
             return;
         }
+
+    let texto = nuevaTarea.value;
+    tareas.push(texto);
+    localStorage.setItem("tareas", JSON.stringify(tareas));
+
         
         let nuevoLi = document.createElement('li');
         nuevoLi.classList.add('elementoLista');
@@ -57,6 +64,69 @@ nuevaTarea.addEventListener('keyup', (e) => {
     };
 });
 
+//Leer las tareas desde localStorage al cargar la página,
+// y volver a renderizarlas en el HTML.
+window.addEventListener('DOMContentLoaded', () => {
+    //leer localStorage
+    const tareasGuardadas = JSON.parse(localStorage.getItem('tareas'));
+
+    if (tareasGuardadas && Array.isArray(tareasGuardadas)) {
+        tareas = tareasGuardadas;
+
+        //recontruir HTML
+        tareas.forEach(tarea => {
+
+            let nuevoLi = document.createElement('li');
+            nuevoLi.classList.add('elementoLista');
+
+            let nuevaLinea = document.createElement('hr');
+            nuevaLinea.classList.add('elementoLinea');
+
+            let divTarea = document.createElement('div');
+            divTarea.classList.add('divTarea');
+
+            let divTexto = document.createElement('div');
+            divTexto.classList.add('divtexto');
+
+            let spanCirculo = document.createElement('span');
+            spanCirculo.classList.add('circulo');
+
+            let spanTexto = document.createElement('span');
+            spanTexto.classList.add('txtTarea');
+            spanTexto.textContent = tarea;
+
+            let divIconos = document.createElement('div');
+            divIconos.classList.add('iconos');
+
+            let iTrash = document.createElement('i');
+            iTrash.classList.add('fa-trash-can');
+            iTrash.classList.add('fa-solid');
+
+            let iEdit = document.createElement('i');
+            iEdit.classList.add('fa-pencil');
+            iEdit.classList.add('fa-solid');
+
+            divTarea.appendChild(divTexto);
+            divTarea.appendChild(divIconos);
+
+            divTexto.appendChild(spanCirculo);
+            divTexto.appendChild(spanTexto);
+
+            divIconos.appendChild(iTrash);
+            divIconos.appendChild(iEdit);
+
+            nuevoLi.appendChild(divTarea);
+            nuevoLi.appendChild(nuevaLinea);
+
+            document.querySelector('.listaTareas').appendChild(nuevoLi);
+
+            nuevaTarea.value = '';
+            
+        });
+    }
+
+});
+
 // elemento padre ul .listaTareas
 let listaTareas = document.querySelector('.listaTareas');
 
@@ -92,7 +162,7 @@ listaTareas.addEventListener('click', (event) => {
 
     //editar
     if(event.target.classList.contains('fa-pencil')){
-       let divTarea = event.target.closest('.divTarea');
+        let divTarea = event.target.closest('.divTarea');
         let span = divTarea.querySelector('.txtTarea');
 
         if(span){
