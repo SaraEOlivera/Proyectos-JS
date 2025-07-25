@@ -156,6 +156,14 @@ listaTareas.addEventListener('click', (event) => {
     if(event.target.classList.contains('fa-trash-can')){
         let li = event.target.closest('li');
         if (li) {
+            let tx = li.querySelector('.txtTarea').textContent;
+
+            //eliminar 1 tarea
+/*el array*/tareas = tareas.filter(t => t !== tx);
+
+            //actualizar storage
+            localStorage.setItem('tareas', JSON.stringify(tareas));
+
             li.remove();    
         }
     }
@@ -166,17 +174,44 @@ listaTareas.addEventListener('click', (event) => {
         let span = divTarea.querySelector('.txtTarea');
 
         if(span){
+            let tareaOriginal = span.textContent;
+
             let nuevoInput = document.createElement('input');
             nuevoInput.type = 'text';
-            nuevoInput.value = span.textContent;
+            nuevoInput.value = tareaOriginal;
             nuevoInput.classList.add('txtTarea');
             span.replaceWith(nuevoInput);
 
             nuevoInput.addEventListener('keyup', (e) => {
                 if (e.key === 'Enter'){
-                    let spanTexto = document.createElement('span');
-                    spanTexto.classList.add('txtTarea');
-                    spanTexto.textContent =  nuevoInput.value;
+                    let textoNuevo = nuevoInput.value.trim();
+
+                    if(textoNuevo !== ''){
+                        let spanTexto = document.createElement('span');
+                        spanTexto.classList.add('txtTarea');
+                        spanTexto.textContent =  textoNuevo;
+
+                        let indice = tareas.indexOf(tareaOriginal);
+                        if(indice !== -1){
+                            tareas[indice] = textoNuevo;
+
+                            localStorage.setItem('tareas', JSON.stringify(tareas));
+
+                        }
+
+                        nuevoInput.replaceWith(spanTexto);
+
+                    }
+
+
+
+                    //reemplazar en el array
+   		            tareas = tareas.filter(t => t == spanTexto);
+
+                    //Guardar nuevamente en localStorage
+                    localStorage.setItem('tareas', JSON.stringify(tareas));
+
+
                     nuevoInput.replaceWith(spanTexto);
                 }
             });
