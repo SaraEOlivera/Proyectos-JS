@@ -5,10 +5,36 @@
     background-color: #f4f4f4;
 }
 
+.header{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding-top: 40px;
+}
+
 h1{
     text-align: center;
-    margin-top: 20px;
-    padding-top: 10px;
+    margin-right: 70px;
+} 
+
+.btnModo {
+    margin-left: 130px;
+    margin-right: 0;
+    border: 2px solid #4f4fc0;
+    background-color: #4f4fc0;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnModo i {
+    font-size: 20px;
+    color: #f4f4f4;
+    background-color: #4f4fc0;
+}
+
+.btnModo #btnSol{
+    display: none;
 }
 
 .contenedor{
@@ -102,11 +128,6 @@ h1{
     transition-duration: 1500ms;
 }
 
-/* .iconos:hover{
-    opacity: 1;
-}
-  */
-
 /* hr */
 .elementoLinea {
     width: 400px;
@@ -115,3 +136,7 @@ h1{
     background-color: #4f4fc0;
     margin: 10px 4px;
 }
+
+
+
+

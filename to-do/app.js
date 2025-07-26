@@ -2,6 +2,8 @@
 let lista = document.getElementById('lista');
 let nuevaTarea = document.getElementById('nuevaTarea');
 let tareas = [];
+let luna = document.getElementById('btnLuna');
+let sol = document.getElementById('btnSol');
 
 nuevaTarea.addEventListener('keyup', (e) => {
 
@@ -196,21 +198,14 @@ listaTareas.addEventListener('click', (event) => {
                             tareas[indice] = textoNuevo;
 
                             localStorage.setItem('tareas', JSON.stringify(tareas));
-
                         }
-
                         nuevoInput.replaceWith(spanTexto);
-
                     }
-
-
-
                     //reemplazar en el array
    		            tareas = tareas.filter(t => t == spanTexto);
 
                     //Guardar nuevamente en localStorage
                     localStorage.setItem('tareas', JSON.stringify(tareas));
-
 
                     nuevoInput.replaceWith(spanTexto);
                 }
@@ -218,6 +213,12 @@ listaTareas.addEventListener('click', (event) => {
         }
     }
 });
+
+
+
+
+
+
 
 
 
